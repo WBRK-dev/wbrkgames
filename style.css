@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+}
+
+:root {
+    --color-prim: #2D033B;
+    --color-secon: #810CA8;
+}
+
+body {
+    background-color: var(--color-secon);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+header {
+    border-radius: 15px;
+    background-color: var(--color-prim);
+    height: 50px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+header #title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+header #w-credit {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+hero {
+    height: 300px;
+    border-radius: 15px;
+    background-color: var(--color-prim);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+hero #title {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+hero a {
+    text-decoration: none;
+    height: 50px;
+    padding: 0 100px;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    position:relative;
+}
+
+hero a::before {
+    content: "";
+    width: 200%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(9,52,121);
+background: linear-gradient(90deg, rgba(9,52,121,1) 0%, rgba(95,10,199,1) 50%, rgba(9,52,121,1) 100%);
+transition: left 250ms;
+}
+
+hero a:hover::before {
+    left: -100%;
+}
+
+hero a p {
+    z-index: 1;
+}
+
+.allGames {
+    border-radius: 15px;
+    background-color: var(--color-prim);
+    padding: 10px;
+}
+
+.allGames > #title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.allGames .item {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.allGames .item #title {
+    margin-right: auto;
+}

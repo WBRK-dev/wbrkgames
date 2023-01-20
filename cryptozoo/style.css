@@ -1,0 +1,260 @@
+*{
+margin: 0;
+color: white;
+}
+
+body {
+background-color: #000;
+height: 100vh;
+overflow: hidden;
+}
+
+.statusbar {
+padding: 0 10px;
+height: 30px;
+display: flex;
+gap: 20px;
+align-items: center;
+}
+
+.main {
+display: flex;
+height: calc(100vh - 30px);
+}
+
+.list {
+flex-grow: 1;
+height: inherit;
+overflow: hidden auto;
+}
+
+.list #maxDinos {
+color: gray;
+margin-left: 10px;
+}
+
+.list #maxDinos span {
+color: gray;
+}
+
+.list .egg,
+.list .dinosaur {
+display: flex;
+align-items: center;
+padding: 0 10px;
+height: 50px;
+}
+
+.list .egg[detailSel],
+.list .dinosaur[detailSel] {
+    background-color: #494949;
+}
+
+.list .egg #title,
+.list .dinosaur #title {
+font-weight: bold;
+}
+
+.list .egg #timeDisp,
+.list .dinosaur #timeDisp {
+margin-left: auto;
+}
+
+.list .dinosaur.selected {
+    animation: selected 1000ms linear infinite;
+}
+
+@keyframes selected {
+    0%{background-color: transparent;}
+    50%{background-color: #494949;}
+    100%{background-color: transparent;}
+}
+
+
+
+
+
+
+
+
+.shop {
+width: 350px;
+height: calc(inherit - 20px);
+background-color: #494949;
+padding: 10px;
+}
+
+.shop .options a,
+.shop .options .shop-item {
+margin: 10px;
+padding: 0 10px;
+height: 50px;
+background-color: #656565;
+border-radius: 10px;
+text-decoration: none;
+
+display: flex;
+align-items: center;
+}
+
+.shop .options .shop-item #price {
+margin-left: auto;
+}
+
+.shop .fuse .button {
+margin: 10px;
+padding: 0 10px;
+height: 50px;
+background-color: #656565;
+border-radius: 10px;
+    
+display: flex;
+align-items: center;
+}
+
+
+
+
+.popups {
+background-color: #00000050;
+
+position: absolute;
+top: 30px;
+left: 0;
+height: calc(100vh - 30px);
+width: 100%;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+animation: slide 250ms forwards;
+}
+
+@keyframes slide {
+0% {top: 100%;}
+100% {top: 30px;}
+}
+
+.popups .window-popup {
+width: calc(100% - 40px);
+height: calc(100vh - 70px);
+background-color: #494949;
+overflow: hidden;
+border-radius: 10px;
+}
+
+.popups .window-popup .header {
+height: 40px;
+background-color: rgb(32, 32, 32);
+width: 100%;
+padding: 0 10px;
+
+display: flex;
+align-items: center;
+}
+
+.popups .window-popup .header #title {
+font-size: 25px;
+font-weight: bold;
+}
+
+.popups .window-popup .header #close {
+font-size: 27px;
+background-color:red;
+height: 20px;
+width: 20px;
+border-radius: 15px;
+margin-left: auto;
+margin-right: 20px;
+cursor: pointer;
+}
+
+.popups .window-popup .content {
+padding: 10px;
+overflow: hidden auto;
+height: calc(100vh - 130px);
+}
+
+
+
+
+
+
+
+.popups #shop .content {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.popups #shop .content > #title {
+font-weight: bold;
+font-size: 20px;
+}
+
+.popups #shop .content .buy-grid {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.popups #shop .content .buy-grid .buy-item {
+background-color: #656565;
+height: 250px;
+width: 200px;
+display: flex;
+flex-direction: column;
+padding: 10px;
+border-radius: 10px;
+}
+
+.popups #shop .content .buy-grid .buy-item .buy-item-img {
+flex-grow: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.popups #shop .content .buy-grid .buy-item #title {
+align-self: center;
+margin-bottom: 10px;
+}
+
+.popups #shop .content .buy-grid .buy-item button {
+border: none;
+border-radius: 10px;
+background-color: #000;
+padding: 5px 0;
+cursor: pointer;
+}
+
+
+
+.popups #upgrades .content .upgrade {
+display: flex;
+align-items: center;
+}
+
+.popups #upgrades .content .upgrade #title {
+font-weight: bold;
+}
+
+.popups #upgrades .content .upgrade button {
+margin-left: auto;
+padding: 5px 10px;
+background-color: #000;
+border: none;
+border-radius: 10px;
+}
+
+
+
+.popups #settings .content button#reset {
+width: 200px;
+height: 40px;
+background-color: red;
+font-size: 16px;
+border: none;
+border-radius: 10px;
+}

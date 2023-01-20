@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+	 <link rel="stylesheet" href="style.css">
+	<title>CryptoZoo</title>
+  </head>
+  <body>
+	<div class="statusbar"><p id="bronze" data-bronze="10">Bronze: <span id="currency">10</span> (<span id="ps">0</span> B/s)</p><p id="silver" data-silver="0">Silver: <span id="currency">0</span></p><p id="w-credit" data-w-credit="0">W-Credits: <span id="currency">0</span></p></div>
+	<div class="main">
+		<div class="list">
+			<p id="maxDinos" data-current="0" data-max="10"><span id="current">0</span>/<span id="max">10</span> Dino's</p>
+
+		</div>
+		<div class="shop">
+			<div class="options">
+				<div class="shop-item" id="buyegg" data-price="10"><p id="title">Buy Egg</p><p id="price"><span>10</span> Bronze</p></div>
+				<div class="shop-item" id="hatch-all" onclick="hatchAll()"><p id="title">Hatch All</p></div>
+				<div class="shop-item" id="fuse" data-price="10"><p id="title">Fuse Dinosaurs</p><p id="price"><span>10</span> Silver</p></div>
+				<div class="shop-item" id="shop"><p id="title">Shop</p></div>
+				<div class="shop-item" id="upgrades"><p id="title">Upgrades</p></div>
+				<div class="shop-item" id="settings"><p id="title">Settings</p></div>
+				<a href="../">To Homepage</a>
+			</div>
+			<div class="fuse" style="display: none;">
+				<div class="button"><p>Cancel</p></div>
+				<p>Click on two dinosaurs to fuse them together.</p>
+			</div>
+		</div>
+	 </div>
+
+
+	<div class="popups" style="display: none;">
+	 	<div class="window-popup" id="shop">
+			<div class="header"><p id="title">Shop</p><p id="close"></p></div>
+			<div class="content">
+				<p id="title">W-Credits</p>
+				<div class="buy-grid">
+					<div class="buy-item" data-buy='{ "pay": { "type": "bronze", "amount": 1000000 }, "get": { "type": "w-credit", "amount": "1" } }'><div class="buy-item-img"><img src="./images/money.svg"></div><p id="title">1 W-Credit</p><button id="buy-button">1000000 Bronze</button></div>
+					<div class="buy-item" data-buy='{ "pay": { "type": "bronze", "amount": 1900000 }, "get": { "type": "w-credit", "amount": "2" } }'><div class="buy-item-img"><img src="./images/money.svg"></div><p id="title">2 W-Credits</p><button id="buy-button">1900000 Bronze</button></div>
+				</div>
+				<p id="title">Silver</p>
+				<div class="buy-grid">
+					<div class="buy-item" data-buy='{ "pay": { "type": "bronze", "amount": 1000 }, "get": { "type": "silver", "amount": 5 } }'><div class="buy-item-img"><img src="./images/money.svg"></div><p id="title">5 Silver</p><button id="buy-button">1000 Bronze</button></div>
+					<div class="buy-item" data-buy='{ "pay": { "type": "bronze", "amount": 1750 }, "get": { "type": "silver", "amount": 10 } }'><div class="buy-item-img"><img src="./images/money.svg"></div><p id="title">10 Silver</p><button id="buy-button">1750 Bronze</button></div>
+					<div class="buy-item" data-buy='{ "pay": { "type": "bronze", "amount": 17500 }, "get": { "type": "silver", "amount": 100 } }'><div class="buy-item-img"><img src="./images/money.svg"></div><p id="title">100 Silver</p><button id="buy-button">17500 Bronze</button></div>
+					<div class="buy-item" data-buy='{ "pay": { "type": "w-credit", "amount": 5 }, "get": { "type": "silver", "amount": 1000 } }'><div class="buy-item-img"><img src="./images/money.svg"></div><p id="title">1000 Silver</p><button id="buy-button">5 W-Credits</button></div>
+					<div class="buy-item" data-buy='{ "pay": { "type": "w-credit", "amount": 9 }, "get": { "type": "silver", "amount": 2000 } }'><div class="buy-item-img"><img src="./images/money.svg"></div><p id="title">2000 Silver</p><button id="buy-button">9 W-Credits</button></div>
+				</div>
+				<p id="title">Dinosaurs</p>
+				<div class="buy-grid">
+					<div class="buy-item"><div class="buy-item-img"><p style="font-size: 30px;">Dino</p></div><p id="title">Dinosaur Gen 15</p><button id="buy-button">25 W-Credits</button></div>
+					<div class="buy-item"><div class="buy-item-img"><p style="font-size: 30px;">Dino</p></div><p id="title">Dinosaur Gen 20</p><button id="buy-button">35 W-Credits</button></div>
+					<div class="buy-item"><div class="buy-item-img"><p style="font-size: 30px;">Dino</p></div><p id="title">Dinosaur Gen 25</p><button id="buy-button">45 W-Credits</button></div>
+				</div>
+			</div>
+		</div>
+		<div class="window-popup" id="upgrades">
+			<div class="header"><p id="title">Upgrades</p><p id="close"></p></div>
+			<div class="content">
+				<div class="upgrade" id="maxGen" data-price="1000" data-value="1" data-adder="1"><div id="details"><p id="title">Upgrade Max Gen</p><p id="value">Max Gen: <span>1</span></p></div><button id="buy">1000 Bronze</button></div>
+				<div class="upgrade" id="maxDinos" data-price="500" data-value="10" data-adder="5"><div id="details"><p id="title">Upgrade Max Dino's</p><p id="value">Max Dino's: <span>10</span></p></div><button id="buy">500 Bronze</button></div>
+			</div>
+		</div>
+		<div class="window-popup" id="settings">
+			<div class="header"><p id="title">Settings</p><p id=close></p></div>
+			<div class="content">
+				<button id="reset" onclick="resetProg()">Reset progression</button>
+			</div>
+		</div>
+	</div>
+
+
+
+  </body>
+<script src="global_functions.js"></script>
+<script src="script.js"></script>
+</html>
