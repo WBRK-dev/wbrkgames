@@ -1,0 +1,33 @@
+.betaPopup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: #00000095;
+}
+
+.betaPopup .popup {
+    background-color: #fff; 
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.betaPopup .popup > * {
+    color: #000;
+}
+
+.betaPopup .popup a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
