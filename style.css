@@ -105,6 +105,15 @@ hero a p {
     height: 30px;
 }
 
-.allGames .item #title {
-    margin-right: auto;
+.allGames .item #tag {
+    margin-left: 10px;
+    background: rgb(104,121,9);
+    background: linear-gradient(90deg, rgba(104,121,9,1) 0%, rgba(0,255,49,1) 100%, rgba(0,255,49,1) 100%); 
+    color: #000;
+    padding: 0px 5px;
+    border-radius: 5px;
+}
+
+.allGames .item a {
+    margin-left: auto;
 }
