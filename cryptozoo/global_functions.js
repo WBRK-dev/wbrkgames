@@ -97,7 +97,7 @@ function debugCountdown() {
 }
 
 function resetProg() {
-	localStorage.removeItem("cryptozoo.saves");
+	localStorage.setItem("cryptozoo.saves", JSON.stringify({"bronze": 10, "silver": 0, "calcEggPrice": 10, "dinosaurs": [], "eggs": [], "upgrades": {}, "resetData": 1}));
 	window.location.reload(true);
 }
 
